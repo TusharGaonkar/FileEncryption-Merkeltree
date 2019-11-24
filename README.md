@@ -31,6 +31,8 @@ Data structure used:
 Outputs:
 Check for the given set of files whether it is tampered or not,if it's tampered output the particular file which got tampered.
 Output the unique hash code for the particular set of files.
+<--------------------------------------------------------------------------------------------------------------------------------->
+<--------------------------------------------------------------------------------------------------------------------------------->
 
 
 How to Run these files
