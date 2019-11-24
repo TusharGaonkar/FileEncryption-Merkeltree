@@ -32,3 +32,9 @@ Outputs:
 Check for the given set of files whether it is tampered or not,if it's tampered output the particular file which got tampered.
 Output the unique hash code for the particular set of files.
 
+
+HOW TO RUN THESE FILES
+Open Command prompt after downloading these files 
+----> a.exe (Executable is already provided no need of compiling it again)
+----> type cd "file_path" move to the current directory of the project
+-----> then type a
