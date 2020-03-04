@@ -8,7 +8,7 @@ A tree data structure where each non-leaf node is a hash of it’s child nodes.A
 
 Merkel Root:The Root of this tree holds a unique cryptographic hash as the fingerprint for the entire data in a binary Merkel tree
 
-SOURCE:https://en.wikipedia.org/wiki/Merkle_tree
+SOURCE: https://en.wikipedia.org/wiki/Merkle_tree
 
 Implementation of the Binary Merkel Tree in your project:
 A system to check the Integrity of the files in a folder inorder to avoid tampering of the data in any instance.If there is a file transfer from source to destination then the user receiving this file can easily check for any modification in the source file thus guaranteeing safe transactions.
@@ -33,7 +33,6 @@ Data structure used:
 Outputs:
 Check for the given set of files whether it is tampered or not,if it's tampered output the particular file which got tampered.
 Output the unique hash code for the particular set of files.
-<--------------------------------------------------------------------------------------------------------------------------------->
 
 
 How to Run these files
