@@ -50,7 +50,7 @@ all the ***leaf nodes contain*** the **cryptographic** hashes of the data set.
 
 
 
-# How to Run this files !
+# How to Run these files !
 
     sudo git clone https://github.com/TusharGaonkar/MerkelTree-File_encryption.git
 
