@@ -80,7 +80,7 @@ struct Merkel_node *generateTree(struct Merkel_node **leafnodes, int n)
                 temp[e]->left = leafnodes[i - 1];
                 temp[e]->right = leafnodes[i];
                 e++;
-            }//A structure holding structure of merkel leaf nodes to track the nodes
+            }//A structure of  Merkel structures(pointer to a Structural Pointer **) of merkel leaf nodes to track the nodes
         }
         if (isOdd)
         {
