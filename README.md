@@ -26,7 +26,15 @@ all the ***leaf nodes contain*** the **cryptographic** hashes of the data set.
 
 ## Data Structures Used
 
- 1. Binary tree as GGM tree
+ 1. Binary tree as GGM tree with a structure 
+    ```c
+    struct Merkel_node{ 
+    char *hashconcat; 
+    struct Merkel_node *left;
+    struct Merkel_node *right
+    };
+    ```
+
  2. Stack to Hold hashes of child nodes to concatenate these in the
     parent node.
  3. File reading techniques in C
