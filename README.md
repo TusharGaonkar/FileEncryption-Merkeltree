@@ -40,6 +40,7 @@ all the ***leaf nodes contain*** the **cryptographic** hashes of the data set.
  3. File reading techniques in C
  4. Cryptography Hashing function to generate Hash codes of a fixed
     length for any arbitrary length and to avoid any hashing collisions(using concepts of SHA-256 Algorithm).
+ 5. Pointers in C
 
 ## Inputs & Features
 
@@ -49,7 +50,55 @@ all the ***leaf nodes contain*** the **cryptographic** hashes of the data set.
  - Thus a Merkel root is generated at the end after hashing these files at each
    levels from leaf nodes to the root thus generating a single unique
    hash code for the set of files.
+  - A Recursive Tree Generator function which can concatenate the hash results of individual nodes until we reach the root!,This function handles the case of converting odd      number of nodes if present in each level of the tree to an even length inorder to hash it
 
+```c
+struct Merkel_node *generateTree(struct Merkel_node **leafnodes, int n)
+{
+    if (n == 1)
+        return leafnodes[0];
+
+    int y = n / 2, isOdd = 0;
+    if (y % 2 != 0 && y != 1)
+    {
+        y++;
+        isOdd = 1;
+    }  //A function to create the non-leaf nodes if the number of nodes are odd then create a new node to make it even then replicate the data of the previous node
+
+    struct Merkel_node **temp = malloc(y * sizeof(struct Merkel_node *));
+    // if (isOdd) 
+    // { 
+        int e = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (i % 2 != 0)
+            {
+                char temphash[400], hash[400];
+                strcpy(temphash, leafnodes[i - 1]->hashconcat);
+                strcat(temphash, leafnodes[i]->hashconcat);
+                concatHash(temphash, 256, hash);
+                temp[e] = createnode(hash);
+                temp[e]->left = leafnodes[i - 1];
+                temp[e]->right = leafnodes[i];
+                e++;
+            }//A structure holding structure of merkel leaf nodes to track the nodes
+        }
+        if (isOdd)
+        {
+            temp[e] = temp[e - 1];
+            temp[e]->left = NULL;
+            temp[e]->right = NULL;
+        }
+    
+    generateTree(temp, y);
+}
+
+
+
+
+
+
+```
 ![enter image description here](https://pbs.twimg.com/media/CqHRpKjUkAA0o-w.jpg)
 
 
