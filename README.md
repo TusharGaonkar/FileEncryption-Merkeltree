@@ -66,8 +66,7 @@ struct Merkel_node *generateTree(struct Merkel_node **leafnodes, int n)
     }  //A function to create the non-leaf nodes if the number of nodes are odd then create a new node to make it even then replicate the data of the previous node
 
     struct Merkel_node **temp = malloc(y * sizeof(struct Merkel_node *));
-    // if (isOdd) 
-    // { 
+    
         int e = 0;
         for (int i = 0; i < n; i++)
         {
